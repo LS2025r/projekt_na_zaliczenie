@@ -1,4 +1,4 @@
-.counter {
+/* .counter {
   font-size: 16px;
   padding: 5px 10px;
   border-radius: 5px;
@@ -180,5 +180,132 @@
   &::after {
     right: 0;
     border-right-color: var(--border);
+  }
+} */
+
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap");
+
+:root {
+  --bg: #e0ff96;
+  --surface: #ffffff;
+  --ink: #1e2235;
+  --muted: #636b83;
+  --border: #d5dae4;
+  --accent: #5b4bdb;
+  --success: #2e9e4f;
+  --radius: 10px;
+
+  --pc: #6b7280;
+  --ps5: #2f5bd3;
+  --xbox: #2e9e4f;
+  --switch: #e0393e;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "Rubik", Arial, sans-serif;
+}
+
+.app {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px 16px;
+}
+
+.app-header {
+  margin-bottom: 24px;
+}
+
+.app-header h1 {
+  color: var(--ink);
+  margin: 0;
+  font-size: 2rem;
+}
+
+.app-subtitle {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.game-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.game-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  padding: 16px 20px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 8px solid var(--pc);
+  border-radius: var(--radius);
+}
+
+.platform-PC {
+  border-left-color: var(--pc);
+}
+.platform-PS5 {
+  border-left-color: var(--ps5);
+}
+.platform-Xbox {
+  border-left-color: var(--xbox);
+}
+.platform-Switch {
+  border-left-color: var(--switch);
+}
+
+.game-title {
+  color: var(--ink);
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.game-details {
+  margin: 4px 0 0;
+  color: var(--muted);
+}
+
+.game-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.game-rating {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+
+.badge {
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  background: var(--bg);
+  color: var(--muted);
+}
+
+.badge-done {
+  background: #dcf2e3;
+  color: var(--success);
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }
