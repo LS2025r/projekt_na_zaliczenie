@@ -1,10 +1,15 @@
 import GameKarta from "./Gry";
 
-function ListGier({ game }) {
+function ListGier({ gry, onEdytuj, onUsun }) {
   return (
-    <ul className="lista-gier">
-      {game.map((game) => (
-        <GameKarta key={game.id} game={game} />
+    <ul className="games-list">
+      {gry.map((game) => (
+        <GameKarta
+          key={game.id}
+          game={game}
+          onEdytuj={onEdytuj}
+          onUsun={onUsun}
+        />
       ))}
     </ul>
   );

@@ -199,6 +199,10 @@
   --ps5: #2f5bd3;
   --xbox: #2e9e4f;
   --switch: #e0393e;
+  --danger: #d93036;
+  --danger-hover: #b82a2f;
+  --accent-hover: #4a3bc4;
+  --focus: #dcd8fa;
 }
 
 * {
@@ -219,6 +223,11 @@ body {
 }
 
 .app-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
   margin-bottom: 24px;
 }
 
@@ -244,6 +253,8 @@ body {
 
 .game-card {
   display: flex;
+  flex-direction: column;
+  text-align: center;
   justify-content: space-between;
   align-items: center;
   gap: 16px;
@@ -301,6 +312,89 @@ body {
 .badge-done {
   background: #dcf2e3;
   color: var(--success);
+}
+
+.dialog-tlo {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 34, 53, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 10;
+}
+
+.dialog {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 24px;
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.dialog h2 {
+  margin: 0 0 16px;
+  font-size: 1.3rem;
+  padding-right: 32px;
+}
+
+.dialog-zamknij {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  border: none;
+  background: none;
+  font-size: 1.1rem;
+  color: var(--muted);
+  padding: 4px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.dialog-zamknij:hover {
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.pusta-lista {
+  text-align: center;
+  padding: 48px 16px;
+  background: var(--surface);
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  color: var(--muted);
+}
+
+.pusta-lista-ikona {
+  font-size: 2.5rem;
+  margin: 0 0 8px;
+}
+
+.input-blad {
+  border-color: var(--danger);
+}
+
+.input-blad:focus {
+  border-color: var(--danger);
+  box-shadow: 0 0 0 3px #f8d4d5;
+}
+
+.blad {
+  margin: 0;
+  color: var(--danger);
+  font-size: 0.875rem;
+}
+
+.wyszukiwarka {
+  margin-bottom: 16px;
+}
+
+.wyszukiwarka .form-input {
+  width: 100%;
 }
 
 @media (max-width: 600px) {
